@@ -13,5 +13,21 @@ class Currency
     return @currency_code
   end
 
+  def tender(currency)
+    @currency_code = currency
+  end
+#attr_writer :currency_code would do the same thing
+#dollar.tender("USD")
+
+  def ==(currency)
+    if currency.amount == @amount &&
+      currency.currency_code == @currency_code
+      return true
+    else
+      return false
+    end
+  end
 
 end
+
+#dollar1.compare(dollar2)
