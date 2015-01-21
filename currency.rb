@@ -46,6 +46,11 @@ class Currency
 
   end
 
+  def *(number)
+    product = self.class.new(amount * number, @currency_code)
+    puts product.amount
+    return product
+  end
 
 end
 

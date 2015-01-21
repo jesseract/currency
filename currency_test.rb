@@ -45,6 +45,17 @@ class CurrencyTest < Minitest::Test
     assert_raises(DifferentCurrencyCodeError) { currency_1 - currency_2 }
   end
 
+  def test_multiply_and_return_currency_object
+    currency_1 = Currency.new(5, "USD")
+
+    currency_2 = Currency.new(10, "USD")
+    currency_3 = currency_1 * 2
+    assert_equal currency_3, currency_2
+
+    currency_4 = currency_1 * 1.75
+    currency_5 = Currency.new(8.75, "USD")
+    assert_equal currency_4, currency_5
+  end
 
 end
 
