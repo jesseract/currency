@@ -5,12 +5,12 @@ class Currency
   end
 
   def amount
-    return @amount
+    @amount
   end
 #attr_reader :amount would do the same thing
 
   def currency_code
-    return @currency_code
+    @currency_code
   end
 
   def tender(currency)
@@ -22,10 +22,19 @@ class Currency
   def ==(currency)
     if currency.amount == @amount &&
       currency.currency_code == @currency_code
-      return true
+      true
     else
-      return false
+      false
     end
+  end
+
+  def +(other)
+    if @currency_code != other.currency_code
+      raise DifferentCurrencyCodeError
+    end
+
+    self.class.new(amount + other.amount, @currency_code)
+
   end
 
 end
