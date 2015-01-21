@@ -39,7 +39,7 @@ class Currency
 
   def -(other)
     if @currency_code != other.currency_code
-      raise DifferentCurrencyCodeError
+      raise DifferentCurrencyCodeError, "You cannot subtract two different currencies"
     end
 
     self.class.new(amount - other.amount, @currency_code)
@@ -48,7 +48,6 @@ class Currency
 
   def *(number)
     product = self.class.new(amount * number, @currency_code)
-    puts product.amount
     return product
   end
 

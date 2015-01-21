@@ -57,6 +57,10 @@ class CurrencyTest < Minitest::Test
     assert_equal currency_4, currency_5
   end
 
+  def test_currency_converter_exists
+    assert CurrencyConverter
+  end
+
 end
 
 
