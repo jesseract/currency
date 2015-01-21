@@ -3,6 +3,7 @@ require 'minitest/pride'
 
 require './currency.rb'
 require './different_currency_code_error.rb'
+require './currency_converter.rb'
 
 class CurrencyTest < Minitest::Test
   def test_currency_exists
