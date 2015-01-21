@@ -38,6 +38,14 @@ class CurrencyTest < Minitest::Test
     currency_2 = Currency.new(10, "GBP")
     assert_raises(DifferentCurrencyCodeError) { currency_1 + currency_2 }
   end
+
+  def test_subtract_currency_with_different_code
+    currency_1 = Currency.new(5, "USD")
+    currency_2 = Currency.new(10, "GBP")
+    assert_raises(DifferentCurrencyCodeError) { currency_1 - currency_2 }
+  end
+
+
 end
 
 

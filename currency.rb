@@ -37,6 +37,16 @@ class Currency
 
   end
 
+  def -(other)
+    if @currency_code != other.currency_code
+      raise DifferentCurrencyCodeError
+    end
+
+    self.class.new(amount - other.amount, @currency_code)
+
+  end
+
+
 end
 
 #dollar1.compare(dollar2)
